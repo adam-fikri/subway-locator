@@ -14,11 +14,11 @@ This is a project of a chatbot that help to get information of a Subway outlets 
 ```bash
 docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
+- To run Ollama in GPU, follow [this](https://hub.docker.com/r/ollama/ollama)
 - Next, download Llama 3.2 model by:
 ```bash
 docker exec -it ollama ollama pull llama3.2:1b
 ```
-- To run Ollama in GPU, follow [this](https://hub.docker.com/r/ollama/ollama)
 
 ## 3. Install Python libraries
 - To install Python libraries:
