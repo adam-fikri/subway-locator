@@ -62,5 +62,6 @@ uvicorn main:app --reload
 cd ui
 python app.py
 ```
+- The web app can be access on http://localhost:8050
 
 # All done 🎉
