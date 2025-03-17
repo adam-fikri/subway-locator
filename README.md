@@ -8,7 +8,10 @@ This is a project of a chatbot that help to get information of a Subway outlets 
 # Get started
 ## 1. Git clone
 - Git clone this repo:
-- 
+```bash
+git clone https://github.com/adam-fikri/subway-locator.git
+```
+  
 ## 2. Running Ollama Docker Image
 - To run Ollama image in CPU. This should also create a new container:
 ```bash
@@ -26,3 +29,38 @@ docker exec -it ollama ollama pull llama3.2:1b
 cd backend
 pip install -r requirements.txt
 ```
+
+## 4. Run the program
+### a. Run Ollama Docker container 
+- Make sure the Docker container that just created is running:
+```bash
+docker ps -a
+```
+- To run Docker container:
+```bash
+docker run <container_id or container_name>
+```
+
+### b. Run API
+- First, make sure subway_store.db is available in backend folder else:
+```bash
+cd backend
+python createDB.py
+```
+- Before scraping, make sure to get Google geocoding API by following steps in https://developers.google.com/maps/documentation/geocoding/cloud-setup#console.
+- Next,  scrape from https://www.subway.com.my/find-a-subway by:
+```bash
+python scrape.py
+```
+- Finally, run the API
+```bash
+uvicorn main:app --reload
+```
+### c. Run the web app
+- Open another terminal and run:
+```bash
+cd ui
+python app.py
+```
+
+# All done 🎉
